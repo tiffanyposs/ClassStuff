@@ -1,0 +1,21 @@
+<html>
+<body>
+
+<form action="/add" method="post">
+  <input type="text" name="item">
+  <input type="text" name="item_two">
+  <input type="text" name="item_three">
+  <input type="submit" value="Add">
+</form>
+
+
+<% if (items.length > 0) { %>
+<ul>
+  <% items.forEach(function(item) { %>
+    <li><%= item.first_name %> <%= item.last_name %> <%= item.email %></li>
+  <% }) %>
+</ul>
+<% } %>
+
+</body>
+</html>

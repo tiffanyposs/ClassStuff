@@ -1,0 +1,14 @@
+<html>
+<body>
+		<% counter = 0 %>
+		<% new_height = height.to_i %>
+		<% while counter < 15 %>
+		<img src="http://placekitten.com/g/<%= width %>/<%= new_height %>"></img>
+		<% counter+=1 %>
+		<% new_height+=10 %>
+		<% end %>
+</body>
+</html>
+
+
+<!-- this renders the cats 15 times with an increased height ever time by 10 px -->

@@ -1,0 +1,22 @@
+<html>
+	<body>
+		<header>
+			<h1>petulance</h1>
+		</header>
+
+
+
+		<ul>
+        <%pets.each do |entry| %>
+        <li><%= entry[1]%> is a <%= entry[2]%>. This pet has an id of <a href="/pet/<%= entry[0] %>"><%= entry[0]%></a>.</li>
+        <% end %>
+        </ul>
+
+        <h3>Add a pet here:</h3>
+        <form action="/pet" method="post">
+        	<input type="text" name = "name" placeholder="pet name" required>
+            <input type="text" name = "type" placeholder="pet type" required>
+            <button>ADD IT!!!</button>
+        </form>
+	</body>
+</html>

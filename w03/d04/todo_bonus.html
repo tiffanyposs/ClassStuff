@@ -1,0 +1,50 @@
+<html>
+<head>
+</head>
+<body>
+
+  <ol>
+
+  </ol>
+  <input type="text" id="text-box"  placeholder="Type what you want to add">
+  <button id = "button">Click to Add</button>
+
+
+
+  <script>
+//debugger;
+  var ol = document.querySelector("ol");
+  var input = document.getElementById("text-box");
+  var button = document.getElementById("button");
+  var li = document.querySelector("li");
+
+  var add = function(){
+    var li = document.createElement("li");
+    li.draggable = "true";
+    li.innerText = input.value;
+    ol.appendChild(li);
+    input.value = "";
+
+    li.addEventListener("dragstart", function(){
+      var ol = document.querySelector("ol");
+      ol.removeChild(li);
+    })
+    // li.addEventListener("dragstart", function(){
+    //   ol.removeChild(this);
+    // })
+  }
+
+  // var parent = li.parentElement
+  button.addEventListener("click", add);
+  
+  // this allows you to press enter to send to the server
+  input.addEventListener("keypress", function(){
+    if(event.keyCode === 13){
+      button.click();
+    }
+  });
+
+
+  </script>
+</body>
+</html>

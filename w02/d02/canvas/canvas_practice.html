@@ -1,0 +1,46 @@
+<html>
+<body>
+  <canvas id="the_canvas" width="800" height="600"></canvas>
+  <script>
+
+  var canvas = document.getElementById('the_canvas');
+  var ctx = canvas.getContext('2d');
+
+  var x = 0; // moves to the right
+  var y = 100; // this is where the ball starts on the y axis
+  var circlesize = 50;
+  var dropspeed= 0; // this is the counter for the y axis
+
+  var draw = function(){
+    y += dropspeed; // this takes y the starting point and adds and equals dropspeed
+    dropspeed += 1;// dropspeed adds one so essencially y has 1 being added to it
+
+    x+=1; // x moves the ball to the right across the page
+
+    if(y > canvas.height - circlesize){ // this makes it so if y while dropping reaches
+      dropspeed = -dropspeed; // the height - circle size it will reverse dropspeed
+    }
+
+    // background
+    ctx.fillStyle = "#40401A";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // this is the ball
+    ctx.beginPath();
+    ctx.arc(x, y, 50, 0, 2*Math.PI); // this assigns the x to go across and y to make
+    ctx.fillStyle = "orange";// it go up and down
+    ctx.fill();
+
+    if(x > canvas.width){
+      x %= canvas.width;
+      x = 0;
+    }
+  }
+
+  setInterval(draw, 20)
+
+
+
+  </script>
+</body>
+</html>

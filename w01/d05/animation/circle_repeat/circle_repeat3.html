@@ -1,0 +1,43 @@
+<html>
+<body>
+  <canvas id="the_canvas" width="400" height="400"></canvas>
+
+  <script>
+
+  var canvas = document.getElementById("the_canvas")
+  var ctx = canvas.getContext("2d")
+
+  var number = prompt("Please enter a number.")
+  var counter = 1
+
+  // below is a function that will select number within
+  //the min and max range
+  var random_num = function(min, max){
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+
+  //var color = ["red", "yellow", "green"]
+var dots = function(color){
+  while (counter <= number) {
+    ctx.beginPath();
+    ctx.arc(random_num(0, 400), random_num(100, 200), 10, 0, 2*Math.PI);
+    ctx.fillStyle = color;
+    ctx.fill();
+    console.log(ctx.fillStyle);
+    counter ++;
+  }
+}
+
+console.log(dots("red"));
+console.log(dots("yellow"));
+
+  /*
+  This code will render a random amount of circles within an area
+  the fuction random_num generates a random number with a min and max
+  number, which can be used to generating colors within a random area
+
+  */
+
+  </script>
+</body>
+</html>

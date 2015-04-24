@@ -1,0 +1,9 @@
+# A sample Gemfile
+source "https://rubygems.org"
+
+
+require 'require_relative'
+require 'activerecord'
+require 'pry'
+require 'sinatra'
+# gem "rails"

@@ -1,0 +1,44 @@
+<html>
+<head>
+  <style>
+
+  button{
+    display: block;
+    font-size: 30px;
+    font-color: red;
+    background-color: yellow;
+  }
+  </style>
+</head>
+
+<body>
+  <canvas id="the_canvas" width="500" height="500"></canvas>
+
+<button id= "trigger">Start animation!</button>
+
+  <script>
+    var canvas = document.getElementById('the_canvas');
+    var ctx = canvas.getContext('2d');
+    var button = document.getElementById("trigger")
+
+    //draws one square when called
+    var randomSquare = function(){
+      var x = Math.floor(Math.random()*canvas.width);
+      var y = Math.floor(Math.random()*canvas.height);
+      ctx.fillStyle = "red";
+      ctx.fillRect (x, y, 55, 50);
+      return ctx.fillStyle
+    }
+
+    //draws a square every second takes a parameter of a shape
+    var draw = function(){
+      setInterval(randomSquare, 10000);
+    }
+
+
+    button.addEventListener("click", draw);
+
+
+  </script>
+</body>
+</html>

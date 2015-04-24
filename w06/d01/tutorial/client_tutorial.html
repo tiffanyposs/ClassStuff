@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<head>
+
+<style>
+p{
+  width: 500px;
+}
+
+.html{
+  background-color: lightgrey;
+  width: 600px;
+}
+.java{
+  background-color: lightyellow;
+  width: 600px;
+}
+i{
+  background-color: lightcyan;
+}
+</style>
+
+</head>
+
+
+<body>
+<!--   HTML section -->
+  <h2>Base HTML Code</h2>
+
+  <p>The code below is the base html code we will be
+    refering to thoughout out server and client. Please
+    take note of the id names of the elements below, they will
+    be referenced in the client Javascript file and in the 
+    styling CSS file.</p>
+
+
+<!-- !!!!!!!!!!!!!!!!!! -->
+<!--   Below is HTML Code -->
+<!-- !!!!!!!!!!!!!!!!!! -->  
+<h3>HTML Code</h3>
+      <div class="html">
+        <xmp>
+  <!DOCTYPE html>
+  <html>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <head>
+  </head>
+
+  <body>
+    
+      <h1>Welcome to the World's Greatest Chat App</h1>
+      
+    <div id="chatbox">
+      <ul>
+      </ul>
+    </div>
+
+    <div id="messageinput">
+      <p>Your message:</p><input type = "text" id = "input"><br>
+    </div>
+
+    <button type = "button" id = "button">Send message</button>
+
+    <div id="nameinput">
+      <p>Your name:<input type = "text" id = "namebox"></p>
+    </div>
+
+    <script src = "client.js"></script>
+
+  </body>
+  </html>
+        </xmp>
+      </div>
+<!-- End HTML Code -->
+
+
+
+<!-- Client Section -->
+  <h2>Client</h2>
+
+  <h3>Client Code Overview</h3>
+  <p>In this section we will be covering client
+    code that will interact with the server code we
+    just wrote.</p>
+  <p>See below the example client Javascript code we will be going
+    through in this section. Also Included is the html code that this
+    client is referencing to</p>
+
+        <div class = "java">
+      <pre><code>
+      var client = new WebSocket("ws://localhost:2000");
+
+      var message = document.getElementById("input");
+      var namebox = document.getElementById("namebox");
+      var button = document.getElementById("button");
+
+      button.addEventListener("click", function(){
+        var msg = {name: namebox.value}
+        msg["words"] = message.value;
+        var encoded_msg = JSON.stringify(msg);
+        client.send(encoded_msg);
+        message.value = "";
+      });
+
+      client.addEventListener("message", function(message){
+        var ul = document.querySelector("ul");
+        var newLi = document.createElement("li");
+        var messageText = message.data;
+        newLi.innerHTML = " &ltli&gt " + messageText + " &lt/li&gt ";
+        ul.appendChild(newLi);
+      });
+      </code></pre>
+        
+      </div>
+
+
+
+<h3>Establishing Connection to the Server</h3>
+
+<p>First thing you must create your Web Socket client.
+  You must establish a client variable and a new WebSocket
+  connection. Here we are hosting it on a <i>localhost</i>, but
+  later when you want to host your chat app on the internet
+  you will have to change it to be hosted on your own site.</p>
+
+<p>You also have the ability to change what port number this is
+  hosted on. In this case it is hosted on <i>port 2000</i> as you can
+  see at the end of this code. Make sure this number matches the
+  port number on your server code.</p>
+
+    <div class="java">
+      <pre><code>
+        var client = new WebSocket("ws://localhost:2000");        
+      </code></pre>
+    </div>
+
+
+<h3>Linking HTML Elements</h3>
+
+<p>In the code below we create links to the html elements from the
+  html file previously mentioned. This grabs the elembets by the id
+  using <i>.getElementById</i>, which grabs text existing elements by
+  their id in html file</p>
+
+<p>The elements that we are grabbing are two imput boxes, <i>var message</i>
+  is for the input box that messages are written in, and <i>var namebox</i>
+  is for the input box that the username is written in. The variable 
+  <i>var button</i> is the button that sends messages from the message input
+  box.</p>
+
+    <div class="java">
+      <pre><code>
+      var message = document.getElementById("input");
+      var namebox = document.getElementById("namebox");
+      var button = document.getElementById("button");
+      </code></pre>
+    </div>
+
+
+<h3>Sending a Message to the Server</h3>
+
+<p>The next section of code sends a message that the client types
+to the server, which then the server will send back to all clients.</p>
+
+<p>Line 1: <i>button.addEventListener("click", function(){</i>
+this calls the button that we previously declared, and adds an
+event listener to it on the click.</p>
+
+<p>Line 2: <i>var msg = {name: namebox.value}</i> is createing
+an object variable with a key of name and a value that gets the value
+from the namebox from the html file. This is assigning a username to
+a user</p>
+
+<p>Line 3: <i>msg["words"] = message.value;</i> This code take the same
+object variable <i>msg</i> and assigns a key of words and a value that takes
+the value of the message input box. This is creating a message from the message
+box</p>
+
+<p>Line 4: <i>var encoded_msg = JSON.stringify(msg);</i> This code creates
+a variable <i>var encoded_msg</i> that takes your newly created <i>msg</i>
+variable and calles <i>JSON.stringify(msg)</i> on it. This is essentially
+make the object msg into a sendible 'stringified' version of it to the server.
+The server will unwrap this stringified package back into an object.</p>
+
+<p>Line 5: <i>client.send(encoded_msg);</i> This code sends your to the server
+using <i>client.send</i></p>
+
+<p>Line 6: <i>message.value = "";</i> This resets the message imput 
+box to nothing after the message is set</p>
+    <div class="java">
+    <pre><code>
+      button.addEventListener("click", function(){
+        var msg = {name: namebox.value}
+        msg["words"] = message.value;
+        var encoded_msg = JSON.stringify(msg);
+        client.send(encoded_msg);
+        message.value = "";
+      });
+    </pre></code>
+    </div>
+
+    <h3>Receiving a message</h3>
+
+    <p>Line 1: <i>client.addEventListener("message", function(message){</i>
+      this established a message event listener. The parameter is the
+      incoming message.</p>
+
+    <p>Line 2: <i>var ul = document.querySelector("ul");</i> this selects
+      the ul element from the html file</p>
+
+    <p>Line 3: <i>var newLi = document.createElement("li");</i> this uses
+      <i>.createElement()</i> to create a variable that creates a new li</p>
+
+    <p>Line 4: <i>var messageText = message.data;</i> This declares a variable
+      that gets uses .data from message</p>
+    
+    <p>Line 5: <i>newLi.innerHTML = " &ltli&gt " + messageText + " &lt/li&gt ";</i>
+      This sets the newLi variable's inner text to the messageText surrounded by
+      li tags so it will render on the browser</p>
+
+    <p>Line 6:<i>ul.appendChild(newLi);</i> This line puts the newly created li into
+      the ul text area using .appendChild()</p>
+
+    <div class="java">
+      <pre><code>
+      client.addEventListener("message", function(message){
+        var ul = document.querySelector("ul");
+        var newLi = document.createElement("li");
+        var messageText = message.data;
+        newLi.innerHTML = " &ltli&gt " + messageText + " &lt/li&gt ";
+        ul.appendChild(newLi);
+      });
+      </code></pre>
+    </div>
+
+    <h3>Recap</h3>
+
+    <p>This was an overview on how to create a basic WebSocket client
+      and server. that will send messages between clients.</p>
+
+
+
+
+
+<xmp></xmp>
+</body>
+</html>

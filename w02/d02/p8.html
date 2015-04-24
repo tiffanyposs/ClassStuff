@@ -1,0 +1,45 @@
+<html>
+<body>
+  <canvas id="the_canvas" width="400" height="400"></canvas>
+  <script>
+  var canvas = document.getElementById('the_canvas');
+  var ctx = canvas.getContext('2d');
+
+  var Square = function(x, y, width, height, color){
+    this.x = x;
+    this.y = y;
+    this.width = width;
+    this.height = height;
+    this.color = color;
+    this.draw = function(){
+      ctx.fillStyle = this.color;
+      ctx.fillRect(this.x, this.y, this.width, this.height);
+      return ctx.fillStyle
+    }
+  };
+
+  var pinkSquare = new Square(125, 125, 50, 50, "pink");
+  var blueSquare = new Square(150, 150, 75, 75, "blue");
+  var cyanSquare = new Square(50, 50, 100, 100, "cyan");
+
+console.log(cyanSquare.draw())
+console.log(pinkSquare.draw())
+console.log(blueSquare.draw())
+
+
+  </script>
+</body>
+</html>
+
+
+<!--
+This is a canvas that has a function inside of it called Square.
+Square has the perameters x y width height and color. It
+also have a draw method inside of it which draws a square using
+the given parameters
+
+new Squares are defined to draw different size and color squares
+
+then the new Squares are called with the draw method to draw
+all the squares on the browser page
+-->

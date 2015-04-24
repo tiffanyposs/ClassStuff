@@ -1,0 +1,17 @@
+MVC stands for Model, Views, Controller. For me, this is still
+somewhat conceptual for me, but after doing the forum project over
+the weekend, I feel like I understand it a little more. As
+of now my understanding is more specific to the projects we worked on,
+and may not be specific to the general meaning of MVC.
+
+
+Model- Models show how tables interact with each other.
+
+Views- This is the actual pages that are viewed by the end user.
+
+Controller- Controls what content goes where from and to the tables
+to the views. 
+
+We use MVC in order to have organized clean code. I believe that it allows
+you to change one area of the code more easily without breaking code in other
+areas. You are compartmentalizing different functions.

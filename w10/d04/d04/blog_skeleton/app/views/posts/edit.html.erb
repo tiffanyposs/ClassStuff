@@ -1,0 +1,20 @@
+<!-- using form helpers, create a form that has a name of post and an action of update. there should be inputs prefilled with the existing value for title, author, and content. don't forget a submit button! after the form, create a cancel button that links back to index. -->
+
+
+
+<%= form_for @post, url: {action: 'update'} do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title, value: @post.title %>
+<br /><br />
+
+<%= f.label :author %>
+<%= f.text_field :author, value: @post.author %>
+<br /><br />
+
+<%= f.label :content %>
+<%= f.text_area :content, value: @post.author %>
+<br /><br />
+
+<%= f.submit %>
+<% end %>
+<%= link_to 'cancel', @post %>

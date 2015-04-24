@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<head>
+
+<style>
+p{
+  width: 500px;
+}
+
+img{
+  width: 600px;
+  border: 2px solid lightgrey;
+}
+
+i{
+  background-color: lightcyan;
+}
+</style>
+
+</head>
+
+<body>
+  <h2>Running Locally: Testing Your Server-Client</h2>
+
+  <h3>Organizing Files</h3>
+  <p>In this section we will go over how to test your Server
+    and Client code to make sure your chat app is is
+    working properly.</p>
+
+  <p>Make sure you have your server.js, client.js, index.html,
+    node_modules folder, and package.json in the same folder.</p>
+
+  <img src="img/finder.png"></img>
+
+  <h3>Running your Servers</h3>
+
+  <p>You need to run two servers for you chat app. The WebSocket
+    server you wrote in this tutorial and an http server to host your
+    html file and it's contents.</p>
+
+  <p>In one window navigate navigate to the folder that contains
+    all of your files. once you are in that file, type <i>node server.js</i>
+    in the terminal and press enter.</p>
+
+  <img src="img/websocket.png">
+
+  <p>In the second terminal window type in <i>http-server</i> and press
+    enter. This runs an http server so you html file will be hosted.</p>
+
+  <img src="img/httpserver.png">
+
+  <h3>Opening in the Browser</h3>
+
+  <p>Go to your web browser. To see your site type in <i>localhost:8080</i> 
+    (http servers defalut to port 8080, when logging onto your http server
+    if you were to type <i>http-server -p1000</i> your server would be running
+    on port 1000 instead of 8080) Your basic html file should render. If you open
+    multiple browser windows ang go to <i>localhost:8080</i> you can chat between
+    browsers.</p>
+
+    <img src="img/browser.png">
+
+  <p>Congradulations! Your server is working locally! Make sure you exit both of terminal
+    servers by hitting <i>control C</i>. Now you can CSS style and add features to your chat
+    app. Add a function that renders photos? Emojis?</p>
+
+
+</body>
+</html>

@@ -1,0 +1,284 @@
+<html>
+<body>
+  <canvas id="the_canvas" width="700" height="600"></canvas>
+
+  <script>
+
+  var canvas = document.getElementById("the_canvas");
+  var ctx = canvas.getContext("2d");
+  var x = 0
+
+// background color
+  ctx.fillStyle = "Aquamarine";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+// background hill rectangle
+  ctx.beginPath();
+  ctx.fillStyle = "OliveDrab";
+  ctx.fillRect (0, 400, 700, 200);
+
+  //cloud practice
+  var loop = function(){
+    y+=1;
+    if(y>canvas.width){
+      y=0;
+
+      ctx.beginPath();
+      ctx.arc(70, 67, 50, 0, 2*Math.PI);
+      ctx.fillStyle = "white";
+      ctx.fill();
+    };
+    setInterval(loop, 2);
+  ctx.beginPath();
+  ctx.arc(70, 67, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+}
+
+//cloud1
+  ctx.beginPath();
+  ctx.arc(70, 67, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+//
+  ctx.beginPath();
+  ctx.arc(115, 80, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+//
+  ctx.beginPath();
+  ctx.arc(165, 50, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+
+// cloud2
+  ctx.beginPath();
+  ctx.arc(370, 87, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+//
+  ctx.beginPath();
+  ctx.arc(415, 70, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+//
+  ctx.beginPath();
+  ctx.arc(465, 70, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+
+  // cloud3
+  ctx.beginPath();
+  ctx.arc(580, 180, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+  //
+  ctx.beginPath();
+  ctx.arc(620, 210, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+  //
+  ctx.beginPath();
+  ctx.arc(510, 220, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+  //
+  ctx.beginPath();
+  ctx.arc(565, 248, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+
+  // cloud4
+  ctx.beginPath();
+  ctx.arc(160, 250, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+  //
+  ctx.beginPath();
+  ctx.arc(235, 210, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+  //
+  ctx.beginPath();
+  ctx.arc(175, 190, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+  //
+  ctx.beginPath();
+  ctx.arc(210, 260, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+
+  // cloud5
+  ctx.beginPath();
+  ctx.arc(-120, 180, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+  //
+  ctx.beginPath();
+  ctx.arc(20, 210, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+  //
+  ctx.beginPath();
+  ctx.arc(-190, 220, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+  //
+  ctx.beginPath();
+  ctx.arc(-135, 248, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+
+  // cloud 6
+  ctx.beginPath();
+  ctx.arc(640, 45, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+  //
+  ctx.beginPath();
+  ctx.arc(690, 85, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+
+// tree trunk, rectangle
+  ctx.beginPath();
+  ctx.fillStyle = "SaddleBrown";
+  ctx.fillRect (280, 221, 120, 320);
+
+// leafs tree background color, circle
+  ctx.beginPath();
+  ctx.arc(340, 200, 150, 0, 2*Math.PI);
+  ctx.fillStyle = "SeaGreen";
+  ctx.fill();
+
+
+// apples, circles & squares
+  ctx.beginPath();
+  ctx.arc(340, 200, 15, 0, 2*Math.PI);
+  ctx.fillStyle = "red";
+  ctx.fill();
+  //
+  ctx.beginPath();
+  ctx.fillStyle = "SaddleBrown";
+  ctx.fillRect (338, 175, 5, 15);
+
+  ctx.beginPath();
+  ctx.arc(400, 110, 15, 0, 2*Math.PI);
+  ctx.fillStyle = "red";
+  ctx.fill();
+  //
+  ctx.beginPath();
+  ctx.fillStyle = "SaddleBrown";
+  ctx.fillRect (398, 85, 5, 15);
+
+  ctx.beginPath();
+  ctx.arc(420, 220, 15, 0, 2*Math.PI);
+  ctx.fillStyle = "red";
+  ctx.fill();
+  //
+  ctx.beginPath();
+  ctx.fillStyle = "SaddleBrown";
+  ctx.fillRect (418, 195, 5, 15);
+
+  ctx.beginPath();
+  ctx.arc(280, 120, 15, 0, 2*Math.PI);
+  ctx.fillStyle = "red";
+  ctx.fill();
+  //
+  ctx.beginPath();
+  ctx.fillStyle = "SaddleBrown";
+  ctx.fillRect (278, 95, 5, 15);
+
+  ctx.beginPath();
+  ctx.arc(370, 290, 15, 0, 2*Math.PI);
+  ctx.fillStyle = "red";
+  ctx.fill();
+  //
+  ctx.beginPath();
+  ctx.fillStyle = "SaddleBrown";
+  ctx.fillRect (368, 265, 5, 15);
+  //  // -2 -25 "5" "15"
+
+  ctx.beginPath();
+  ctx.arc(250, 210, 15, 0, 2*Math.PI);
+  ctx.fillStyle = "red";
+  ctx.fill();
+  //
+  ctx.beginPath();
+  ctx.fillStyle = "SaddleBrown";
+  ctx.fillRect (248, 185, 5, 15);
+
+  ctx.beginPath();
+  ctx.arc(270, 290, 15, 0, 2*Math.PI);
+  ctx.fillStyle = "red";
+  ctx.fill();
+  //
+  ctx.beginPath();
+  ctx.fillStyle = "SaddleBrown";
+  ctx.fillRect (268, 265, 5, 15);
+
+//
+
+/*
+  var counter = 1;
+
+  while (counter <= 50) {
+    ctx.fillStyle = "red";
+    ctx.beginPath();
+    ctx.arc(Math.floor(256*Math.random(), Math.floor(256*Math.random(), 10, 0, 2*Math.PI);
+    console.log(ctx.fillStyle);
+
+    ctx.fill();
+    counter ++;
+
+  }
+*/
+/*
+  var counter = 1;
+
+  while (counter <= 52) {
+    ctx.fillStyle = "rgb(" + Math.floor(256*Math.random()) + "," + Math.floor(256*Math.random()) + "," + Math.floor(256*Math.random()) + ")";
+    console.log(ctx.fillStyle);
+    ctx.fillRect(400*Math.random(), 400*Math.random(), 50, 50);
+    counter ++;
+  }
+*/
+/*
+  var draw = function() {
+
+    // this is the background color
+    ctx.fillStyle = "Aquamarine";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    //moves square to the right
+    x+=1;
+    //makes sure it stays on the screen
+    if(x>canvas.width){
+      x=0;
+    };
+    ctx.fillStyle = "red";
+    ctx.fillRect (x, 300, 100, 50)
+  };
+
+  setInterval(draw, 200);
+*/
+  </script>
+</body>
+</html>
+
+
+<!--
+Draw an Apple Tree with apples on it
+
+The leaves could be drawn with a loop that fills a circle with random colors?
+
+apple will wiggle slightly like there is wind
+
+Leaves could fall off the tree in the wind
+
+apples can fall to the ground from the tree randomly
+
+some apples will be triggered by pressing the down arrow
+
+could make clouds drifting in the background
+-->

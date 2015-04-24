@@ -1,0 +1,81 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul>
+        
+    </ul>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script>
+//need to go to localhost:4567/ajax_prac.html for it to work
+
+
+    // $('body').keydown(function (e){
+    //     if(e.keyCode === 13){
+    //         $('#submit').click();
+    //         console.log('Enter was pressed');
+    //     }
+    // })
+
+
+
+            // image_array = [];
+            // counter = 0;
+            // var gif = input_box.value;
+            // input_box.value = "";
+            // //encodeURI sets it up with % etc to format it for searching
+            // encoded = gif.replace(" ", "+");
+            // console.log(encoded);
+
+                   
+        var url = "http://localhost:4567/api"
+
+        var xhr = new XMLHttpRequest();
+
+        var load = xhr.addEventListener('load', function(e) {
+      
+        // xhr.responseText - this is what get's the shit
+        var d = xhr.responseText;
+        var parsed = JSON.parse(d);
+
+        //this grabs the img tag from the html file then sets
+        //the src to the parsed JSON to the key value Poster 
+        var body = document.querySelector("body") 
+        var ul = document.querySelector("ul");
+        var key_count = Object.keys(parsed).length;
+
+        //this puts all of them on a page
+        for(var i = 0; i < key_count; i++){
+        var li = document.createElement("li");
+        var a = document.createElement('a')
+        li.innerText = "This is " + parsed[i].name + " his id number is "
+        ul.appendChild(li);
+        a.innerText = parsed[i].id;
+        a.href = "#"
+        a.id = "info" + parsed[i].id + "_li";
+        li.appendChild(a);
+        }//end for loop
+
+        info_0_li = document.getElementById('info_0_li')
+        info_0_li.addEventListener("click", function(){
+            body.removeChild(ul);
+        })
+
+        console.log(parsed);
+        console.log(Object.keys(parsed).length)
+    })
+        // this just tells you where to go get the data. 
+        xhr.open("GET", url);
+        xhr.send();
+    
+
+  
+
+    </script>
+</body>
+</html>

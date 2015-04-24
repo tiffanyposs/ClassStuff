@@ -1,0 +1,107 @@
+<html>
+<head>
+</head>
+
+<body>
+<script>
+
+var h1 = document.createElement("h1");
+hi.innerText = "Top 10 Songs";
+
+var ul = document.createElement("ul");
+
+var songs = ["Song1", "Song2", "Song3"];
+
+songs.forEach(function(song){
+  var li = document.createElement("li");
+  li.innerText = song;
+  ul.appendChild(li);
+})
+
+var body = document.querySelector("body");
+body.appendChild(h1);
+body.appendChild(ul)
+
+//SECOND ANSWER
+// var h1 = document.createElement("h1");
+// h1.innerText = "Top 10 songs";
+// var body = document.querySelector("body");
+// body.appendChild(h1);
+//
+// var ul = document.createElement("ul");
+// body.appendChild(ul);
+//
+// var liCreate = function(){
+//   var li = document.createElement("li");
+//   ul.appendChild(li);
+//   return li;
+// }
+//
+// var li_1 = liCreate();
+// var li_2 = liCreate();
+// var li_3 = liCreate();
+// var li_4 = liCreate();
+// var li_5 = liCreate();
+// var li_6 = liCreate();
+// var li_7 = liCreate();
+// var li_8 = liCreate();
+// var li_9 = liCreate();
+// var li_10 = liCreate();
+//
+// li_1.innerText = "Song 1"
+// li_2.innerText = "Song 2"
+// li_3.innerText = "Song 3"
+// li_4.innerText = "Song 4"
+// li_5.innerText = "Song 5"
+// li_6.innerText = "Song 6"
+// li_7.innerText = "Song 7"
+// li_8.innerText = "Song 8"
+// li_9.innerText = "Song 9"
+// li_10.innerText = "Song 10"
+
+//ORIGINAL SOLUTION
+//
+// var li_1 = document.createElement("li");
+// li_1.innerText = "Song 1";
+// ul.appendChild(li_1);
+//
+// var li_2 = document.createElement("li");
+// li_2.innerText = "Song 2";
+// ul.appendChild(li_2);
+//
+// var li_3 = document.createElement("li");
+// li_3.innerText = "Song 3";
+// ul.appendChild(li_3);
+//
+// var li_4 = document.createElement("li");
+// li_4.innerText = "Song 4";
+// ul.appendChild(li_4);
+//
+// var li_5 = document.createElement("li");
+// li_5.innerText = "Song 5";
+// ul.appendChild(li_5);
+//
+// var li_6 = document.createElement("li");
+// li_6.innerText = "Song 6";
+// ul.appendChild(li_6);
+//
+// var li_7 = document.createElement("li");
+// li_7.innerText = "Song 7";
+// ul.appendChild(li_7);
+//
+// var li_8 = document.createElement("li");
+// li_8.innerText = "Song 8";
+// ul.appendChild(li_8);
+//
+// var li_9 = document.createElement("li");
+// li_9.innerText = "Song 9";
+// ul.appendChild(li_9);
+//
+// var li_10 = document.createElement("li");
+// li_10.innerText = "Song 10";
+// ul.appendChild(li_10);
+//
+
+</script>
+</body>
+</html>

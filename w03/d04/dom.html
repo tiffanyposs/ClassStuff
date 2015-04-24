@@ -1,0 +1,22 @@
+<html>
+  <head>
+  </head>
+  <body>
+
+    <input type="text" id="text-box" placeholder="Type what you want to add">
+    <p></p>
+
+    <script>
+
+    var p = document.querySelector("p");
+    var input = document.querySelector("input");
+
+    var write = function(){
+      p.innerText= input.value;
+    }
+
+    input.addEventListener("keyup", write)
+
+    </script>
+  </body>
+</html>

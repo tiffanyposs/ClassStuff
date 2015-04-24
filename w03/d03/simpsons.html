@@ -1,0 +1,85 @@
+<html>
+<head>
+</head>
+
+<body>
+<ul>
+
+</ul>
+<button id = "button1">Add Character</button>
+<button id = "button2">Remove Character</button>
+
+<script>
+//This will loop though the array and create li elements
+//within the ul in the html body and create one list element
+//for each element in the array
+
+var simpsons = ["Homer", "Marge", "Lisa", "Maggie", "Abe"];
+var ul = document.querySelector("ul");
+var button1 = document.querySelector("#button1");
+var button2 = document.querySelector("#button2");
+
+simpsons.forEach(function(person){
+  var li = document.createElement("li");
+  li.innerText = person;
+  ul.appendChild(li);
+});
+// this adds the a randome person from the array array and creates
+// a li item
+var array = ["Apu", "Moe", "Barney", "Otto", "Nelson"];
+
+/*
+this add function when the add button is clicked
+will set the li variables to li then index will choose
+a random whole number between 0 and the length of the
+array. var random_index selects a random position in
+the array array.
+
+li.inner text is set to the random choosen string in array,
+after the if statements that index position is removed from
+array.
+
+the if statements are for when the array gets to 1 and 0,
+0 must come first or else it will run both when it gets
+to 1. If 1 it will use the last remaining element in the
+array, if 0 it will say there is nothing left and have
+an alert
+*/
+var add = function(){
+  var li = document.createElement("li");
+  var index = Math.floor(Math.random()*array.length);
+  var random_index = array[index];
+    li.innerText = random_index;
+    ul.appendChild(li);
+    if(array.length === 0){
+      li.innerText = "No more characters!";
+      ul.appendChild(li);
+      alert("There are no more characters!");
+    }
+    if(array.length === 1){
+      li.innerText = array[0];
+      ul.appendChild(li);
+      array.splice(0, 1)
+    }
+    array.splice(index, 1);
+}
+
+/*
+this takes the remove button and takes the
+selector li:last-of-type and it will push the
+inner text into the the array if button is clicked
+then it will remove the last element from ul
+*/
+var sub = function(){
+  var li = document.querySelector("li:last-of-type");
+  array.push(li.innerText);
+  ul.removeChild(li);
+
+}
+
+button1.addEventListener("click", add)
+button2.addEventListener("click", sub)
+
+</script>
+</body>
+</html>

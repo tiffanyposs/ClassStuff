@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title></title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+      <script src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
+      <script src="http://documentcloud.github.com/backbone/backbone-min.js"></script>
+  </head>
+  <body>
+    <script type = "text/template" id = "pizzaTemplate">
+      <h1>Hello, Im a <%= pizzatype.type %></h1>
+      <h3>I use the following things:</h3>
+      <ul>
+        <% pizzatype.ingredients.forEach(function(hobby) { %>
+          <li><%= hobby %></li>
+          <% }); %>
+      </ul>
+    </script>
+
+    <div id = "pizza"></div>
+    <script>
+      var PizzaView = Backbone.View.extend({
+        el: "#pizza",
+        template: _.template($('#pizzaTemplate').html()),
+        initialize: function() {
+          this.render();
+        },
+
+        events: {"click h1": "changePizza"},
+
+        changePizza: function() {
+          this.$el.html(this.template({pizzatype:
+            {type: 'Pepperoni Pizza',
+             ingredients: ['Dough', 'Sauce', 'Cheese', 'Pepperoni']}
+          }));
+        },
+
+        render: function() {
+          this.$el.html(this.template({pizzatype:
+            {type: 'Veggie Pizza',
+            ingredients: ['Dough', 'Sauce', 'Cheese', 'Mushrooms', 'Spinach']
+            }}
+          ));
+          return this;
+        }
+        });
+        new PizzaView();
+    </script>
+  </body>
+</html>

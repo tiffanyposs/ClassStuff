@@ -1,0 +1,44 @@
+<html>
+<style>
+  button{
+    color: red;
+    background-color: purple;
+    font-size: 100px;
+  }
+</style>
+
+<body>
+
+<button>
+hey
+</button>
+
+<script>
+// this is one way to write it
+/*
+var doAlert = function(){
+  alert('hey');
+}
+var button = document.querySelector("button");
+
+button.addEventListener("click", doAlert)
+*/
+
+//this is the second way
+//this is an anymonis function, probably more common
+var button = document.querySelector("button");
+
+button.addEventListener("click", function(){
+  alert('hey');
+})
+
+
+
+
+// .addEventListener has two parameters
+//the event(they are premade) its listening for, and calling a functions
+// so it will fire when you click
+//mouse over, click,
+</script>
+</body>
+</html>

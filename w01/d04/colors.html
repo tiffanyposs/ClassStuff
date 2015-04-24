@@ -1,0 +1,53 @@
+<html>
+<body>
+  <canvas id="the_canvas" width="400" height="400"></canvas>
+
+  <script>
+
+  var canvas = document.getElementById('the_canvas');
+  var ctx = canvas.getContext('2d');
+
+  var number = prompt("Pick a number.")
+  var color = ["rgb(255,102,102)", "#B20000", "blue"]
+  var counter = 0
+  var two_counter = 0
+
+  while(counter <= number) {
+
+    if(two_counter <= color.length){
+    ctx.fillStyle = color[two_counter];
+    ctx.fillRect(400*Math.random(), 400*Math.random(), 50, 50);
+    console.log(ctx.fillStyle);
+    counter++
+    two_counter++
+  }
+
+    else{
+      two_counter = 0;
+    }
+}
+
+  </script>
+</body>
+</html>
+
+
+<!--
+ var canvas and var ctx set up the canvas
+
+ var number prompts the user for anumber
+ var color has an array of 3 colors
+ counter counts up to the prompted number
+ two_counter counts to 2 length of the array then is reset to 0 later
+
+ while makes sure the counter is less than or equal to the prompted number
+ if makes sure the two counter is less than the lenghth of the array
+ ctx.fillStyle selects one of the array elements based on the two-counter
+ ctx.fillRect fills a rectangle in a random spot that is 50px by 50px
+ console.log prints the square
+ counter++ adds adds 1 to overall counter
+ two_counter adds 1 to the counter that only goes to 2
+
+ else resets two_counter to 0 when it reaches to be <= color.length
+    from the if statement
+-->

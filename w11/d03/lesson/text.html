@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title></title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+      <script src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
+      <script src="http://documentcloud.github.com/backbone/backbone-min.js"></script>
+  </head>
+  <body>
+    <script type = "text/template" id = "personTemplate">
+      <h1>Hello, my name is <%= personX.name %></h1>
+      I like doing the following things:
+      <ul>
+        <% personX.hobbies.forEach(function(hobby) { %>
+          <li><%= hobby %></li>
+          <% }); %>
+      </ul>
+    </script>
+
+    <div id = "person"></div>
+    <script>
+      var PersonView = Backbone.View.extend({
+        el: "#person",
+        template: _.template($('#personTemplate').html()),
+        initialize: function() {
+          this.render();
+        },
+
+        events: {"click h1": "changePerson"},
+
+        changePerson: function() {
+          this.$el.html(this.template({personX:
+            {name: 'Brick Tamlan',
+             hobbies: ['Reporting the Weather', 'Lamp']}
+          }));
+        },
+
+        render: function() {
+          this.$el.html(this.template({personX:
+            {name: 'Ron Burgendy',
+            hobbies: ['Reporting the News', 'Playing the Flute', 'Jogging']
+            }}
+          ));
+          return this;
+        }
+        });
+        new PersonView();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        var url = "http://api.randomuser.me/";
+        var xhr = new XMLHttpRequest();
+
+        xhr.addEventListener('load', function(e) {
+            var d = xhr.responseText;
+            var parsed = JSON.parse(d);
+            var email = parsed['results'][0]['user']['email'];
+            var first_name = parsed['results'][0]['user']['name']['first'];
+            var last_name = parsed['results'][0]['user']['name']['last'];
+
+            console.log(first_name);
+            console.log(last_name);
+            console.log(email);
+        })
+
+        xhr.open("GET", url);
+        xhr.send();
+
+    </script>
+</body>
+</html>

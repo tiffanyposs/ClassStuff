@@ -1,0 +1,8 @@
+<h2><%= @entry.name %></h2>
+<h4>Ingredients</h4>
+<h3><%= @entry.ingredients %></h3>
+<p><%= @entry.instructions%></p>
+
+<%= link_to 'delete', @entry, method: :delete %>
+<%= link_to 'back', entries_path %>
+<%= link_to 'edit', edit_entry_path(@entry) %>

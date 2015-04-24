@@ -1,0 +1,87 @@
+<html>
+<head>
+</head>
+
+<body>
+  <ul>
+
+  </ul>
+  <button id = "button1">Add Character</button>
+  <button id = "button2">Remove Character</button>
+
+  <script>
+
+  var ul = document.querySelector("ul");
+  var button1 = document.querySelector("#button1");
+  var button2 = document.querySelector("#button2");
+
+//this will prompt a user for a name then it will
+//crealt an li from that input
+  var add = function(){
+    var name = prompt("Name of Character?");
+    var li = document.createElement("li");
+    li.innerText = name;
+    ul.appendChild(li);
+  }
+
+//this will prompt the user how many characters they want to remove
+//then it will remove that amount of characters
+  var remove = function(){
+    var num = prompt("How many do you want to remove?");
+    for(var i = 0; i < num; i++){
+      var li = document.querySelector("li:last-of-type");
+      ul.removeChild(li);
+      }
+  }
+
+  button1.addEventListener("click", add)
+  button2.addEventListener("click", remove)
+
+
+
+    /*var li = document.createElement("li");
+      li.innerText = person;
+      ul.appendChild(li);*/
+
+
+  //button1.addEventListener("click", person)
+
+/*  simpsons.forEach(function(person){
+    var li = document.createElement("li");
+    li.innerText = person;
+    ul.appendChild(li);
+  });
+
+  var array = ["Apu", "Moe", "Barney", "Otto", "Nelson"];
+
+  var add = function(){
+    var li = document.createElement("li");
+    var index = Math.floor(Math.random()*array.length);
+    var random_index = array[index];
+    li.innerText = random_index;
+    ul.appendChild(li);
+    if(array.length === 0){
+      li.innerText = "No more characters!";
+      ul.appendChild(li);
+      alert("There are no more characters!");
+    }
+    if(array.length === 1){
+      li.innerText = array[0];
+      ul.appendChild(li);
+      array.splice(0, 1)
+    }
+    array.splice(index, 1);
+  }
+
+  var sub = function(){
+    var li = document.querySelector("li:last-of-type");
+    array.push(li.innerText);
+    ul.removeChild(li);
+  }
+
+  button1.addEventListener("click", add)
+  button2.addEventListener("click", sub)
+  */
+</script>
+</body>
+</html>

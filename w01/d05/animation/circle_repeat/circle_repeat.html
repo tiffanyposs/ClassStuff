@@ -1,0 +1,27 @@
+<html>
+<body>
+  <canvas id="the_canvas" width="400" height="400"></canvas>
+
+  <script>
+
+  var canvas = document.getElementById("the_canvas")
+  var ctx = canvas.getContext("2d")
+
+  var number = prompt("Please enter a number.")
+  var counter = 1
+
+  while (counter <= number) {
+    ctx.beginPath();
+    ctx.arc(400*Math.random(), 400*Math.random(), 10, 0, 2*Math.PI);
+    ctx.fillStyle = "red";
+    ctx.fill();
+    console.log(ctx.fillStyle);
+    counter ++;
+  }
+/*
+This code will render a random amount of circles within an area
+*/
+
+  </script>
+</body>
+</html>

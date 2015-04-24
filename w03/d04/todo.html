@@ -1,0 +1,47 @@
+<html>
+<head>
+</head>
+<body>
+
+  <ol>
+  </ol>
+  <input type="text" id="text-box" placeholder="Type what you want to add">
+  <button id = "button">Click to Add</button>
+
+
+  <script>
+
+  var ol = document.querySelector("ol");
+  var input = document.getElementById("text-box");
+  var button = document.getElementById("button");
+
+  /*
+  var input = document.querySelector("input");
+  var button = document.querySelector("button");
+  */
+
+
+/*
+document.getElementById("id name")
+document.getElementsByClassName("class name")
+*/
+
+
+  var add = function(){
+    var li = document.createElement("li");
+    li.innerText = input.value;
+    ol.appendChild(li);
+    input.value = ""
+  }
+
+  button.addEventListener("click", add);
+  input.addEventListener("keypress", function(){
+    if(event.keyCode === 13){
+      button.click();
+    }
+  });
+  //this is to press enter
+
+  </script>
+</body>
+</html>

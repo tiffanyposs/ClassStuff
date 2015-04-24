@@ -1,0 +1,26 @@
+<html>
+<head>
+<style>
+	h2{
+		color: <%= css_color %>;
+	}
+</style>
+</head>
+<body>
+
+<% var i = word_color.length; %>
+<% var array = []; %>
+<% while(i > -1){ %>
+	<% word_color.split(""); %>
+	<% array.push(word_color[i]); %>
+	<% i--; %>
+<% } %>
+<% var new_word = array.join(""); %>
+<h2> <%= new_word%> </h2>
+
+
+
+
+</body>
+</html>
+

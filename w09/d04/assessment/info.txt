@@ -1,0 +1,11 @@
+sqlite3 IKEA.db;
+CREATE TABLE chairs (ID INTEGER PRIMARY KEY, color TEXT, legs INTEGER);
+
+INSERT INTO chairs (color, legs) VALUES("Green", 4),("Blue", 4), ("Yellow", 3), ("Blue", 3), ("Green", 3);
+
+SELECT * FROM chairs;
+SELECT * FROM chairs WHERE color="Blue";
+
+DELETE FROM chairs WHERE id=4;
+
+INSERT INTO chairs (color, legs) VALUES("Chartreuse", 2);

@@ -1,0 +1,19 @@
+<html>
+<head>
+	<title> Our OAuth experiment</title>
+</head>
+<body>
+
+	Hello World
+	<% if session["access_token"]%>
+	YOU ARE LOGGED IN
+	</br>
+	<a href= "/logout">Log Out</a>
+	</br>
+	<img src = <%= @image_url%> />
+	<% else %>
+	<a href= "<%= @url%>"> Log in with github dog </a>
+	<% end %>
+</body>
+</html>
+

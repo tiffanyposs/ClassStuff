@@ -1,0 +1,43 @@
+<!-- This program will take two values in the browser for coordinates
+and put loads it on the map -->
+<!DOCTYPE>
+<html>
+  <head>
+    <style type="text/css">
+      #map-canvas { height: 600px; width: 800px;}
+    </style>
+<!--     links it to google maps-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFns--eX60R0ytKheVrBuoSDVYbshr7M4"></script>
+  </head>
+  <body>
+  <input id = "long"></input>
+  <input id = "lad"></input>
+  <button id = "submit">Click to send</button>
+  <!--     where to put the map-->
+    <div id="map-canvas"></div>
+    <script>
+    //this is the properties to configure how your map will look, there are more options
+
+
+    var button = document.getElementById('submit');
+
+    button.addEventListener("click", function(){
+      var input_long = document.getElementById('long');
+      var input_lad = document.getElementById('lad')
+      var longd = parseInt(input_long.value);
+      var lad = parseInt(input_lad.value);
+      console.log(longd);
+      console.log(lad);
+
+      var mapOptions = {
+        center: { lat: longd, lng: lad},
+        zoom: 11
+      };
+      // var map creates a new google map with the id
+      var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+    })
+
+
+    </script>
+  </body>
+</html>

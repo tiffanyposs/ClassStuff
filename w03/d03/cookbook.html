@@ -1,0 +1,62 @@
+<html>
+<head>
+</head>
+
+<body>
+  <script>
+
+    /*
+    //examples
+    //document.createElement("ElementType")
+    //this creates an element
+    //this whole 4 lines will make you a new element p in the body
+    var p = document.createElement("p");
+    p.innerText="hello";
+    var body = document.querySelector("body");
+    body.appendChild(p);
+    */
+
+    // run this in DOM in the browswer
+    //Lasagna- if you run this in DOM it will generate html elements
+    // this part makes the heading then puts it into the body
+    var heading = document.createElement("h1");
+    heading.innerText = "Lasagna!";
+    var body = document.querySelector("body");
+    body.appendChild(heading);
+
+    // this part make a ul tag and puts it into the body
+    var list = document.createElement("ul");
+    body.appendChild(list);
+
+    //this part declares a new li element, adds Pasta to the inner text
+    //then puts that into the unordered list
+    var li_1 = document.createElement("li");
+    li_1.innerText = "Pasta";
+    list.appendChild(li_1);
+
+    //this part declares a new li element, adds Pasta to the inner text
+    //then puts that into the unordered list
+    var li_2 = document.createElement("li");
+    li_2.innerText = "Sauce";
+    list.appendChild(li_2);
+
+    // this add a paragraph in the body before the list element
+    //parentElement.insertBefore(newElement, referenceElement)
+    var p = document.createElement("p");
+    p.innerText = "Ingredients needed";
+    body.insertBefore(p, list);
+
+
+    //parentElement.removeChild(child)
+    //this removes the declared child from the parent element
+    list.removeChild(li_1);
+    li_1.innerText = "Lasagna Noodles"
+    list.insertBefore(li_1, li_2)
+
+  
+
+
+
+  </script>
+</body>
+</html>

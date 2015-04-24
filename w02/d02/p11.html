@@ -1,0 +1,57 @@
+<html>
+<body>
+  <canvas id="the_canvas" width="400" height="600"></canvas>
+  <script>
+  var canvas = document.getElementById('the_canvas');
+  var ctx = canvas.getContext('2d');
+
+
+  var y = 0;
+  var draw = function() {
+    //clear background
+    ctx.fillStyle = "green";
+    ctx.fillRect(0,0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "red";
+    ctx.fillRect (198, 50, 5, 500);
+
+    y+=1
+    if(y===400){  //canvas.height - 100
+      clearInterval(clear)
+    }
+
+    ctx.beginPath();
+    ctx.arc(200, 100+y, 30, 0, 2*Math.PI);
+    ctx.fillStyle = "black";
+    ctx.fill();
+
+  }
+
+  var clear = setInterval(draw, 25);
+  </script>
+</body>
+</html>
+
+<!--
+  This is a drawing of a New Years ball dropping in 10 seconds
+
+  This is a canvas the background is green with .width to take up the entire background
+
+  Then there is a pole drawing red rectangle
+
+  then i made a counter that is declared outside of the draw function
+  the counter adds 1 and equales it adding 1 to y
+
+  the if statements says when the counter = 400* (see below for why)
+  then clearInterval is declared with the perameter of the variable clear
+  declared below (so it will repeat until it equals 400, then it will clear/stop
+  it)
+
+  then the circle to move is drawn, and I use the counter y on the y axis to
+  move it down the page.
+
+  *if setInterval is set to 1000 thats 1 second, so if I repeat the counter inside
+  10 times that would be 10 seconds. So if you want to ball to go further down
+  you have to  you have to calculate it between the counter and the speed.
+  You can do that be halfing the timer and doubling the counter.
+-->

@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+
+        var url = "http://omdbapi.com/?t=Top%20Gun";
+
+        var xhr = new XMLHttpRequest();
+
+        // this just tells you where to go get the data. 
+        xhr.open("GET", url);
+        
+        // this is an event listener
+        xhr.onreadystatechange = function() {
+          
+        // xhr.responseText - this is what get's the shit
+            var d = xhr.responseText;
+            var parsed = JSON.parse(d);
+
+          console.log(parsed);
+        }
+
+
+        xhr.send();
+    </script>
+</body>
+</html>

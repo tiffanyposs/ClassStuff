@@ -1,0 +1,116 @@
+<html>
+<body>
+  <canvas id="the_canvas" width="800" height="800"></canvas>
+
+  <script>
+
+    var canvas = document.getElementById('the_canvas');
+    var ctx = canvas.getContext('2d');
+
+    //hair arc
+    ctx.beginPath();
+    ctx.arc(200,100,80,0,Math.PI,true);
+    ctx.moveTo(0,0);
+    ctx.fillStyle = "MediumOrchid";
+    ctx.fill();
+
+    // viewers left arm drawing
+    ctx.beginPath();
+    ctx.moveTo(145,165); //center
+    ctx.lineTo(68,284);
+    ctx.lineTo(90,298);
+    ctx.lineTo(160,179);
+    ctx.fillStyle = "cornsilk";
+    ctx.fill();
+
+    // viewers right arm drawing
+    ctx.beginPath();
+    ctx.moveTo(250,165); //center
+    ctx.lineTo(352,283);
+    ctx.lineTo(340,298);
+    ctx.lineTo(245,179);
+    ctx.fillStyle = "cornsilk";
+    ctx.fill();
+
+    // head below circle
+    ctx.beginPath();
+    ctx.arc(200, 75, 40, 0, 2*Math.PI);
+    ctx.fillStyle = "cornsilk";
+    ctx.fill();
+
+    //hair bangs
+    ctx.beginPath();
+    ctx.fillStyle = "MediumOrchid";
+    ctx.fillRect (157, 35, 82, 25);
+
+    // dress-bottom below triangle
+    ctx.beginPath();
+    ctx.moveTo(200, 130);
+    ctx.lineTo(100, 500); //200 center
+    ctx.lineTo(300, 500);
+    ctx.fillStyle = "LightCoral";
+    ctx.fill();
+
+    // neck below rectangle
+    ctx.beginPath();
+    ctx.fillStyle = "cornsilk";
+    ctx.fillRect (185, 110, 30, 50);
+
+    // dress-top-shoulder below upsidedown- triangle
+    ctx.beginPath();
+    ctx.moveTo(200, 300); //bottom point
+    ctx.lineTo(125, 150); //left corner 200 center
+    ctx.lineTo(275, 150); //right corner
+    ctx.fillStyle = "LightPink";
+    ctx.fill();
+
+    // belt below rectangle
+    ctx.beginPath();
+    ctx.fillStyle = "PaleGreen";
+    ctx.fillRect (165, 237, 70, 26);
+
+    // polka dots
+    ctx.beginPath();
+    ctx.arc(235, 383, 10, 0, 2*Math.PI);
+    ctx.fillStyle = "DarkCyan";
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(239, 445, 10, 0, 2*Math.PI);
+    ctx.fillStyle = "CadetBlue";
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(164, 426, 10, 0, 2*Math.PI);
+    ctx.fillStyle = "CadetBlue";
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(174, 328, 10, 0, 2*Math.PI);
+    ctx.fillStyle = "CadetBlue";
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(202, 407, 10, 0, 2*Math.PI);
+    ctx.fillStyle = "DarkCyan";
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(224, 319, 10, 0, 2*Math.PI);
+    ctx.fillStyle = "CadetBlue";
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(132, 474, 10, 0, 2*Math.PI);
+    ctx.fillStyle = "DarkCyan";
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(200, 475, 10, 0, 2*Math.PI);
+    ctx.fillStyle = "CadetBlue";
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(154, 371, 10, 0, 2*Math.PI);
+    ctx.fillStyle = "CadetBlue";
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(266, 474, 10, 0, 2*Math.PI);
+    ctx.fillStyle = "DarkCyan";
+    ctx.fill();
+
+  </script>
+
+</body

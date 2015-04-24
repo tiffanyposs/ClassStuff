@@ -1,0 +1,89 @@
+<html>
+<head>
+<style>
+	.div_one{
+		width: 200px;
+		height: 200px;
+		background-color: purple;
+		position: absolute;
+	}
+	.div_two{
+		width: 200px;
+		height: 200px;
+/*		background-color: blue;*/
+		margin-top: -300px;
+		position: absolute;		
+	}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+<button>slide</button>
+<div class = "div_two"><p>div two</p></div>
+<div class = "div_one"><p>div one</p></div>
+<!-- <div id = "div_two"></div> -->
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script>
+
+$(document).ready(function(){
+
+	var picker = true
+	var div_one = $(".div_one");
+	var div_two = $(".div_two");
+	var colors = ["red", "orange", "yellow", "green", "blue"];
+	var index = 0 
+
+
+  $("button").click(function(){
+
+if(index >= colors.length){
+	index = 0;
+}
+
+if(picker === true){
+	div_two.css({'background-color' : colors[index]})
+    startAnimation();
+    function startAnimation(){
+      div_one.animate({marginTop: "100%"},"slow", hideAnimation);
+    }
+    function hideAnimation(){
+    div_two.animate({marginTop: "0"}, "slow");
+    div_one.css({'margin-top':'-300px'})
+	}
+	picker = false;
+	index++;
+}
+
+else{
+	div_one.css({'background-color' : colors[index]})
+	startAnimationTwo();
+    function startAnimationTwo(){
+    div_two.animate({marginTop: "100%"},"slow", hideAnimationTwo);
+    }
+    function hideAnimationTwo(){
+    div_one.animate({marginTop: "0"}, "slow");
+    div_two.css({'margin-top':'-300px'})
+	}
+	picker = true;
+	index++;
+}
+
+
+  });
+});
+
+	// var body = document.getElementByTagName('body');
+	// var div = document.createElement('div');
+	// body.appendChild(div);
+
+</script>
+</body>
+</html>

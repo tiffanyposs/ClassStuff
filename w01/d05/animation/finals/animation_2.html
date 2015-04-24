@@ -1,0 +1,233 @@
+<html>
+<body>
+  <canvas id="the_canvas" width="700" height="600"></canvas>
+
+  <script>
+
+  var canvas = document.getElementById("the_canvas");
+  var ctx = canvas.getContext("2d");
+  var x = 0
+
+  var draw = function() {
+
+    // this is the part that makes it go across he page
+    x+=1;
+    if(x>canvas.width){
+      x=0;
+    };
+
+
+  // background color
+  /*
+  ctx.fillStyle = "Aquamarine";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+*/
+var grd=ctx.createLinearGradient(100,0,300,600);
+grd.addColorStop(1,"Tomato");
+grd.addColorStop(0.3,"SkyBlue");
+grd.addColorStop(0.2, "Thistle")
+ctx.fillStyle=grd;
+ctx.fillRect(0,0,700,600);
+
+
+  // background hill rectangle
+  ctx.beginPath();
+  ctx.fillStyle = "OliveDrab";
+  ctx.fillRect (0, 400, 700, 200);
+
+// clouds below take the x so it will repeat to
+//go across screen
+//ctx.globalAlpha=0.2;
+
+  //cloud1
+  ctx.beginPath();
+  ctx.arc(x+70, 67, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+  //
+  ctx.beginPath();
+  ctx.arc(x+115, 80, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+  //
+  ctx.beginPath();
+  ctx.arc(x+165, 50, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+
+  // cloud2
+  ctx.beginPath();
+  ctx.arc(370+x, 87, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+  //
+  ctx.beginPath();
+  ctx.arc(415+x, 70, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+  //
+  ctx.beginPath();
+  ctx.arc(465+x, 70, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+
+  // cloud3
+  ctx.beginPath();
+  ctx.arc(580+x, 180, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+  //
+  ctx.beginPath();
+  ctx.arc(620+x, 210, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+  //
+  ctx.beginPath();
+  ctx.arc(510+x, 220, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+  //
+  ctx.beginPath();
+  ctx.arc(565+x, 248, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+
+  // cloud4
+  ctx.beginPath();
+  ctx.arc(160+x, 250, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+  //
+  ctx.beginPath();
+  ctx.arc(235+x, 210, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+  //
+  ctx.beginPath();
+  ctx.arc(175+x, 190, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+  //
+  ctx.beginPath();
+  ctx.arc(210+x, 260, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+
+  // cloud5
+  ctx.beginPath();
+  ctx.arc(-70+x, 180, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+  //
+  ctx.beginPath();
+  ctx.arc(-50+x, 210, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+  //
+  ctx.beginPath();
+  ctx.arc(-140+x, 220, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+  //
+  ctx.beginPath();
+  ctx.arc(-85+x, 248, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+
+  // cloud 6
+  ctx.beginPath();
+  ctx.arc(640+x, 45, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+  //
+  ctx.beginPath();
+  ctx.arc(690+x, 85, 50, 0, 2*Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+
+
+  // tree trunk, rectangle
+  ctx.beginPath();
+  ctx.fillStyle = "SaddleBrown";
+  ctx.fillRect (280, 221, 120, 320);
+
+  // leafs tree background color, circle
+  ctx.beginPath();
+  ctx.arc(340, 200, 150, 0, 2*Math.PI);
+  ctx.fillStyle = "SeaGreen";
+  ctx.fill();
+
+  // apples and stems, circles & squares
+  ctx.beginPath();
+  ctx.arc(340, 200, 15, 0, 2*Math.PI);
+  ctx.fillStyle = "red";
+  ctx.fill();
+  //
+  ctx.beginPath();
+  ctx.fillStyle = "SaddleBrown";
+  ctx.fillRect (338, 175, 5, 15);
+
+  ctx.beginPath();
+  ctx.arc(400, 110, 15, 0, 2*Math.PI);
+  ctx.fillStyle = "red";
+  ctx.fill();
+  //
+  ctx.beginPath();
+  ctx.fillStyle = "SaddleBrown";
+  ctx.fillRect (398, 85, 5, 15);
+
+  ctx.beginPath();
+  ctx.arc(420, 220, 15, 0, 2*Math.PI);
+  ctx.fillStyle = "red";
+  ctx.fill();
+  //
+  ctx.beginPath();
+  ctx.fillStyle = "SaddleBrown";
+  ctx.fillRect (418, 195, 5, 15);
+
+  ctx.beginPath();
+  ctx.arc(280, 120, 15, 0, 2*Math.PI);
+  ctx.fillStyle = "red";
+  ctx.fill();
+  //
+  ctx.beginPath();
+  ctx.fillStyle = "SaddleBrown";
+  ctx.fillRect (278, 95, 5, 15);
+
+  ctx.beginPath();
+  ctx.arc(370, 290, 15, 0, 2*Math.PI);
+  ctx.fillStyle = "red";
+  ctx.fill();
+  //
+  ctx.beginPath();
+  ctx.fillStyle = "SaddleBrown";
+  ctx.fillRect (368, 265, 5, 15);
+
+  ctx.beginPath();
+  ctx.arc(250, 210, 15, 0, 2*Math.PI);
+  ctx.fillStyle = "red";
+  ctx.fill();
+  //
+  ctx.beginPath();
+  ctx.fillStyle = "SaddleBrown";
+  ctx.fillRect (248, 185, 5, 15);
+
+  ctx.beginPath();
+  ctx.arc(270, 290, 15, 0, 2*Math.PI);
+  ctx.fillStyle = "red";
+  ctx.fill();
+  //
+  ctx.beginPath();
+  ctx.fillStyle = "SaddleBrown";
+  ctx.fillRect (268, 265, 5, 15);
+
+  };
+
+
+// this call the draw function sets the speed at which the idems go
+  setInterval(draw, 150);
+
+
+</script>
+</body>
+</html>

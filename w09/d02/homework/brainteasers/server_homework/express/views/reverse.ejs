@@ -1,0 +1,39 @@
+<html>
+<head>
+<style>
+
+</style>
+</head>
+<body>
+
+
+<% var i = word.length; %>
+<% var array = []; %>
+<% while(i > -1){ %>
+	<% word.split(""); %>
+	<% array.push(word[i]); %>
+	<% i--; %>
+<% } %>
+<% var new_word = array.join(""); %>
+<h2> <%= new_word%> </h2>
+
+
+
+
+
+
+
+<!-- <h3>Add a new book here:</h3>
+<form action="/book" method="post">
+	<input type="text" name = "title" placeholder="Book Title" required>
+    <input type="text" name = "author" placeholder="Author" required>
+    <input type="text" name = "isbn" placeholder="ISBN" required>
+    <input type="text" name = "description" placeholder="Description" required>
+    <button>ADD IT!!!</button>
+</form> -->
+
+
+<!-- books["1"]["title"] -->
+</body>
+</html>
+

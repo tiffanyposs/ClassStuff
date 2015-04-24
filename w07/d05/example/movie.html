@@ -1,0 +1,70 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    img{
+        width: 400px;
+    }
+    #input{
+        text-align: center;
+        width: 100%;
+        height: 30px;
+    }
+    #poster{
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+
+
+    <div id = "input">
+        <input type="text">
+        <button>Click me</button>
+    </div>
+
+    <div id = "poster">
+    <img>
+    </div>
+
+
+    <script>
+
+
+        // var url = "http://omdbapi.com/?t=Pulp%20Fiction";
+        var button = document.querySelector('button')
+
+        button.addEventListener('click', function(){
+            var input_box = document.querySelector('input');
+            var movie = input_box.value;
+            input_box.value = "";
+            //encodeURI sets it up with % etc to format it for searching
+            var encoded = encodeURI(movie);
+            console.log(encoded)
+
+        var url = "http://omdbapi.com/?t=" + encoded;
+        var xhr = new XMLHttpRequest();
+
+
+        xhr.addEventListener('load', function(e) {
+      
+        // xhr.responseText - this is what get's the shit
+        var d = xhr.responseText;
+        var parsed = JSON.parse(d);
+
+        //this grabs the img tag from the html file then sets
+        //the src to the parsed JSON to the key value Poster    
+        var img = document.querySelector('img');
+        img.src = parsed.Poster;
+
+        console.log(parsed);
+    })
+        // this just tells you where to go get the data. 
+        xhr.open("GET", url);
+        xhr.send();
+
+    })
+    </script>
+</body>
+</html>

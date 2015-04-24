@@ -1,0 +1,46 @@
+sqlite3 tablefun.db
+CREATE TABLE schools (ID INTEGER PRIMARY KEY, name TEXT, city TEXT, state TEXT, zip INTEGER);
+INSERT INTO schools (name, city, state, zip) VALUES("Yale", "New London", "Conn", 32423), ("Harvard", "Boston", "MA", 02360), ("Stanford", "Stanford", "CA", 84739), ("USC", "San Diego", "CA", 75675);
+
+PRAGMA table_info(schools);
+
+0|ID|INTEGER|0||1
+1|name|TEXT|0||0
+2|city|TEXT|0||0
+3|state|TEXT|0||0
+4|zip|INTEGER|0||0
+
+
+
+UPDATE schools SET name="Manhattan";
+SELECT * FROM schools;
+
+
+
+
+CREATE TABLE teachers (ID INTEGER PRIMARY KEY, name TEXT, email TEXT, subject TEXT, age INTEGER);
+INSERT INTO teachers (name, email, subject, age) VALUES("Miss.Brown", "brown@teacher.edu", "Math", 26),
+("Miss.White", "white@teacher.edu", "English", 54), ("Mr.Yellow", "yellow@teacher.edu", "Science", 22),
+("Miss.Purple", "purple@teacher.edu", "Gym", 34);
+
+INSERT INTO teachers (name, email, subject, age) VALUES("Mr.Black", "black@teacher.edu", "Math", 34), 
+("Mrs.Candy", "candy@teacher.edu", "Math", 40), ("Mrs.Hello", "hello@teacher.edu", "English", 32);
+
+
+
+
+SELECT * FROM teachers
+
+1|Miss.Brown|brown@teacher.edu|Math|26
+2|Miss.White|white@teacher.edu|English|54
+3|Mr.Yellow|yellow@teacher.edu|Science|22
+4|Miss.Purple|purple@teacher.edu|Gym|34
+5|Mr.Black|black@teacher.edu|Math|34
+6|Mrs.Candy|candy@teacher.edu|Math|40
+7|Mrs.Hello|hello@teacher.edu|English|32
+
+
+
+UPDATE teachers SET age= 40 WHERE subject="Math";
+
+DELETE FROM teachers WHERE subject="Math";

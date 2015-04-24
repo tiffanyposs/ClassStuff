@@ -1,0 +1,51 @@
+<html>
+<body>
+  <canvas id="the_canvas" width="700" height="600"></canvas>
+
+  <script>
+
+  var canvas = document.getElementById("the_canvas");
+  var ctx = canvas.getContext("2d");
+
+
+
+  var draw = function() {
+/*
+    i+=1;
+    if(i>canvas.height){
+      i=0;
+    }
+*/
+
+    
+
+    ctx.beginPath();
+    ctx.fillStyle = "blue";
+    ctx.fillRect (0, 0, 700, 600);
+
+    // background hill rectangle
+    ctx.beginPath();
+    ctx.fillStyle = "OliveDrab";
+    ctx.fillRect (0, 400, 700, 200);
+
+    // tree trunk, rectangle
+    ctx.beginPath();
+    ctx.fillStyle = "SaddleBrown";
+    ctx.fillRect (280, 221, 120, 320);
+
+    // leafs tree background color, circle
+    ctx.beginPath();
+    ctx.arc(340, 200, 150, 0, 2*Math.PI);
+    ctx.fillStyle = "SeaGreen";
+    ctx.fill();
+
+
+  }
+
+
+setInterval(draw, 150);
+
+
+</script>
+</body>
+</html>

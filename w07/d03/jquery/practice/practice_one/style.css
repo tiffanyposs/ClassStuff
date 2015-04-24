@@ -1,0 +1,57 @@
+body{
+  margin: 0 auto;
+  text-align: center;
+}
+
+.container{
+  width: 100%;
+  height:200px;
+/*  text-align: center;
+  margin: 0 auto;*/
+  display: block;
+}
+
+
+
+.box{
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  float: left;
+}
+
+#box{
+  border-radius: 50%;
+  background-color: violet;
+  color: white;
+  font-size: 2em;
+}
+
+#box_one{
+  background-color: violet;
+}
+
+#box_two{
+  background-color: blue;
+}
+
+#box_three{
+  background-color: red;
+}
+
+#input_one{
+
+}
+
+#input_box{
+  background-color: violet
+}
+
+
+#box_four{
+  background-color: cyan;
+}
+
+#box_five{
+  background-color: yellow;
+}

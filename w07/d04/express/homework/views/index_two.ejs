@@ -1,0 +1,30 @@
+<!DOCTYPE>
+<html>
+<head>
+	<style>
+	li:first-child{
+		display:none;
+	}
+	</style>
+
+</head>
+  <body>
+  <ul>
+  <% if(array.length != 0){ %>
+  <% array.forEach(function(each){%>
+ 	 <li> <%= each %> </li>
+  <% })} %>
+  </ul>
+
+
+    <form action = "/">
+      <input type = 'text' name = 'name' ></input>
+      <button>Click Me</button>
+    </form>
+
+
+  </body>
+</html>
+
+
+

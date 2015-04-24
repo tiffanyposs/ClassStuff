@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+<style>
+p{
+  width: 500px;
+}
+
+.html{
+  background-color: lightgrey;
+  width: 600px;
+}
+
+.java{
+  background-color: lightyellow;
+  width: 600px;
+}
+
+i{
+  background-color: lightcyan;
+}
+
+img{
+  width: 600px;
+  border: 2px solid lightgrey;
+}
+</style>
+
+</head>
+
+<body>
+  <section>
+  <h2>Installing Packages</h2>
+  
+
+  <h3>http-server</h3>
+  <p>Here a link the the npm page for http server package</p>
+  <a href="https://www.npmjs.com/package/http-server">http-server</a>
+  <p>To build this app, we're going to use a couple of packages from 
+    NPM, a package manager for JavaScript.  First, let's install the 
+    "http-server" package from the terminal. This package will allow us
+    to view the chat app in a web browser.</p>
+
+  <h3>ws</h3>
+  <p>Here a link the the npm page for ws server package</p>
+  <a href="https://www.npmjs.com/package/ws">ws server</a>
+  <p>We also need the "ws" package, which lets us make use of
+   WebSockets. </p>
+
+    <pre class="codewrap"><code>npm install -g ws</code></pre>
+    <pre class="codewrap"><code>npm install -g http-server</code></pre>
+
+   <p>After you've installed these two packages globally, we need to navigate in the terminal to the folder in which we're building our app. From here, we'll enter a couple of commands to make sure the programs in this folder can make use of the packages we've just installed.</p>
+
+    <pre class="codewrap"><code>
+      npm init
+    </code></pre>
+
+    <pre class="codewrap"><code>
+      npm install --save ws
+    </code></pre>
+
+    <pre class="codewrap"><code>
+      npm init
+    </code></pre>
+
+    <pre class="codewrap"><code>
+      npm install --save http-server
+    </code></pre>
+
+
+  </section>
+
+</body>
+</html>

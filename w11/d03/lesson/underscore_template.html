@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title></title>
+    <script src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
+  </head>
+  <body>
+    <script type = "text/template" id = "personTemplate">
+      <h1>Hello, my name is <%= person.name %></h1>
+      I like doing the following things:
+      <ul>
+        <% person.hobbies.forEach(function(hobby) { %>
+          <li><%= hobby %></li>
+          <% }); %>
+      </ul>
+    </script>
+    <script>
+      var template = _.template(document.getElementById("personTemplate").innerHTML);
+      document.write(template({person: {name: "Ron Burgendy", hobbies: ["Reporting the news", "Playing the jazz flute", "jogging"]}}));
+      </script>
+  </body>
+</html>

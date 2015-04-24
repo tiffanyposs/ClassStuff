@@ -1,0 +1,17 @@
+
+<div id = "post">
+  <h2><%= @post.title %></h2>
+  <h3>by <%= @post.author %></h3>
+  <%= @post.content %>
+</div>
+
+<%= link_to 'Home', posts_path %>
+<!-- have a link to index here -->
+<br /><br />
+
+<%= link_to 'delete', @post, method: :delete %>
+
+<%= link_to 'edit', edit_post_path(@post) %>
+
+<!-- link to this post's edit form here -->
+<!-- have a button to delete this post here -->

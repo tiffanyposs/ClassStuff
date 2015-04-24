@@ -1,0 +1,48 @@
+<html>
+<head>
+  <style>
+  div{
+    display: block;
+  }
+  </style>
+</head>
+<body>
+
+<img src="http://www.tehcute.com/pics/201109/hamster-on-a-swing-big.jpg" height = 300px id="picture">
+<div>
+<input type="radio" name ="hamster" id="first" checked= "checked">first</input>
+<input type="radio" name ="hamster" id="second">second</input>
+<input type="radio" name ="hamster" id="third">third</input>
+</div>
+  <script>
+  /*One image dislayed at a time when the different boxes are checked, change the image*/
+    //buttons
+    var first = document.getElementById("first");
+    var second = document.getElementById("second");
+    var third = document.getElementById("third");
+
+    var firstPicture = function(){
+      var picture = document.getElementById("picture");
+      picture.src = "http://www.tehcute.com/pics/201109/hamster-on-a-swing-big.jpg"
+      //places first picture
+    }
+
+    var secondPicture = function(){
+      var picture = document.getElementById("picture");
+      picture.src = "http://1funny.com/wp-content/uploads/2010/06/hamster-gamer.jpg"
+      //places second picture
+    }
+
+    var thirdPicture = function(){
+      var picture = document.getElementById("picture");
+      picture.src = "http://petattack.com/wp-content/uploads/2014/07/hamster-storing-food-in-cheeks-145.jpg"
+      //places second picture
+    }
+
+    first.addEventListener("click", firstPicture);
+    second.addEventListener("click", secondPicture);
+    third.addEventListener("click", thirdPicture);
+
+  </script>
+</body>
+</html>

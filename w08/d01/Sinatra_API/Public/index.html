@@ -1,0 +1,30 @@
+<html>
+<body>
+
+
+<script>
+
+//this gets info from the server
+        var url = "http://localhost:4567";
+
+        var xhr = new XMLHttpRequest();
+
+        xhr.addEventListener('load', function(e) {
+      
+        // xhr.responseText - this is what get's the shit
+        var d = xhr.responseText;
+        var parsed = JSON.parse(d);
+
+        var body = document.getElementsByTagName("body");
+		var p = document.createElement("p");
+
+        p.innerText = parsed.msg;
+		document.body.appendChild(p);
+        console.log(parsed);
+    })
+        // this just tells you where to go get the data. 
+        xhr.open("GET", url);
+        xhr.send();
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<html>
+	<body>
+		<header>
+			<h1>Dwarfs</h1>
+		</header>
+
+		<ul>
+        <%dwarfs.each do |key, dwarf|%>
+        <li><%= dwarf[:name]%> has an id number of <a href="/dwarf/<%= dwarf[:id] %>"><%= dwarf[:id]%></a>.</li>
+        <% end %>
+        </ul>
+
+        <h3>Add a dwarf here:</h3>
+        <form action="/dwarf" method="post">
+            <input type="text" name = "name" placeholder="dwarf name" required>
+            <input type="text" age = "age" placeholder="dwarf age" required>
+            <button>ADD IT!!!</button>
+        </form>
+
+	</body>
+</html>

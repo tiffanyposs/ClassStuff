@@ -1,0 +1,8 @@
+# A sample Gemfile
+source "https://rubygems.org"
+
+require 'sinatra'
+require 'pry'
+require 'httparty'
+require 'json'
+# gem "rails"

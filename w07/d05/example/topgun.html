@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <img>
+    <p></p>
+
+    <script>
+
+        var url = "http://omdbapi.com/?t=Top%20Gun";
+
+        var xhr = new XMLHttpRequest();
+
+        // this just tells you where to go get the data. 
+        xhr.open("GET", url);
+
+
+        xhr.addEventListener('load', function(e) {
+      
+        // xhr.responseText - this is what get's the shit
+        var d = xhr.responseText;
+        var parsed = JSON.parse(d);
+
+        //this grabs the img tag from the html file then sets
+        //the src to the parsed JSON to the key value Poster    
+        var img = document.querySelector('img');
+        img.src = parsed.Poster;
+
+        //setting the p to another 
+        var p = document.querySelector('p');
+        p.innerText = parsed.Awards;
+
+      console.log(parsed);
+    })
+
+
+        xhr.send();
+    </script>
+</body>
+</html>

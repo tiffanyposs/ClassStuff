@@ -1,0 +1,16 @@
+
+var sean = {
+  name: "sean",
+  age: 28,
+  color: "purple"
+}
+var sam = {
+  name: "sam",
+  age: 26,
+  color: "purple"
+}
+var people = [sean, sam]
+// or
+var ppl = [];
+ppl.push(sean);
+ppl.push(sam);

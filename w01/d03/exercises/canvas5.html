@@ -1,0 +1,33 @@
+<html>
+<body>
+  <canvas id="the_canvas" width="400" height="400"></canvas>
+
+  <script>
+
+  var canvas = document.getElementById('the_canvas');
+  var ctx = canvas.getContext('2d');
+
+  var number = prompt("Please enter a number.");
+  var counter = 1;
+
+  while (counter <= number) {
+    ctx.fillStyle = "rgb(" + Math.floor(256*Math.random()) + "," + Math.floor(256*Math.random()) + "," + Math.floor(256*Math.random()) + ")";
+    console.log(ctx.fillStyle);
+    ctx.fillRect(400*Math.random(), 400*Math.random(), 50, 50);
+    counter ++;
+  }
+
+  // prompt prompts the user for a number
+  //the counter starts the amount at 1
+  // the while statement says as long as the counter starting at 1 is less than the prompt number
+  // the .fillStyle part will randomize the rgb numbers, Math.floor will round them down to whole numbers
+  // so in the 400*Math.random() it is 400 because of the width of the canvas
+  // so this will choose a number at random that is less than 400
+
+  </script>
+</body>
+</html>
+
+<!--this script fills a random amount of boxes by the prompt
+in the amount of the users argument, then also randomizes the location
+and the colors of them -->

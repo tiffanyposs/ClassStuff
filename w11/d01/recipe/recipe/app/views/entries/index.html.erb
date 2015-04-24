@@ -1,0 +1,11 @@
+  <h1>Welcome to my food blog!</h1>
+
+  <% @entries.each do |entry| %>
+
+<h2><%= link_to entry.name, entry_path(entry)%></h2>
+  <h4>Ingredients</h4>
+  <h3><%= entry.ingredients %></h3>
+  <p><%= entry.instructions%></p>
+  <% end %>
+
+  <%= link_to 'Create a new entry!', new_entry_path %>

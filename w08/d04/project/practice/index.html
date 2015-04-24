@@ -1,0 +1,87 @@
+<html>
+<meta charset="utf-8">
+<style>
+
+
+
+</style>
+<body>
+  <p>Hello</p>
+  <p>World</p>
+  <p>Hello</p>
+  <p>World</p>
+  <p>Hello</p>
+  <p>World</p>
+  <p>Hello</p>
+  <p>World</p>
+  <p>Hello</p>
+  <p>World</p>
+  <p>Hello</p>
+  <p>World</p>
+  <p>Hello</p>
+  <p>World</p>
+  <p>Hello</p>
+  <p>World</p>
+
+  <svg width="720" height="500">
+    <circle cx="40" cy="60" r="10"></circle>
+    <circle cx="80" cy="60" r="10"></circle>
+    <circle cx="120" cy="60" r="10"></circle>
+  </svg>
+
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script>
+
+
+  // // THIS CHANGES THE BACKGROUND
+  // d3.select("body").style("background-color", "black");
+
+  // //THIS CHANGES THE COLORS TO YELLOW OF ALL P
+  // d3.selectAll("p").style("color", "yellow");
+
+  // //PART 1
+  // //this is picking random colors
+  // d3.selectAll("p").style("color", function() {
+  // return "hsl(" + Math.random() * 360 + ",100%,50%)";
+  // });
+
+  // //PART 2
+  // //this is picking random sizes of font using a data set
+  // d3.selectAll("p")
+  //   .data([4, 8, 15, 16, 23, 42])
+  //   .style("font-size", function(d) { return d + "px"; });
+
+
+    // //PART 3
+    // //this replaces the strings with the data, replaces old data
+    // // Update…
+    // var p = d3.select("body").selectAll("p")
+    //     .data([4, 8, 15, 16, 23, 42])
+    //     .text(String);
+
+    // // Enter…
+    // p.enter().append("p")
+    //     .text(String);
+
+    // // Exit…
+    // p.exit().remove();
+
+
+var svg = d3.select("svg");
+
+for(var x = 0; x < 5; x++){
+
+var circle = svg.selectAll("circle")
+    .data([32, 57, 112, 293]);
+
+var circleEnter = circle.enter().append("circle");
+
+circleEnter.attr("cy", Math.random()*60);
+circleEnter.attr("cx", function(d, i) { return i * 100 + 30; });
+circleEnter.attr("r", function(d) { return Math.sqrt(d); });
+
+}
+</script>
+
+</body>
+</html>

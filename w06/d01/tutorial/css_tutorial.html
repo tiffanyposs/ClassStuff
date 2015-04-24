@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+<style>
+p{
+  width: 500px;
+}
+
+.html{
+  background-color: lightgrey;
+  width: 600px;
+}
+
+.java{
+  background-color: lightyellow;
+  width: 600px;
+}
+
+i{
+  background-color: lightcyan;
+}
+
+img{
+  width: 600px;
+  border: 2px solid lightgrey;
+}
+</style>
+
+</head>
+
+<body>
+  <h2>Styling Your Chat App</h2>
+
+  <p>Remember our simple chat app we made that looked very
+    plain and boring?</p>
+
+  <img src="img/browser.png">
+
+  <p>Below we made some simple styling on the chat app. In
+    this section we made a simple styled chat app. We are going
+    to briefly go over what we did to style it.</p>
+
+  <h3>Styled Chat App</h3>
+  <img src="img/chat.png">
+
+  <p>Here is the sample code we will be working from. The final
+    index.html file and the final styles.css file.</p>
+
+    <h3>HTML Code</h3>
+
+
+<!-- HTML code -->
+<div class="html">
+  <xmp>
+<!DOCTYPE html>
+<html>
+<head>
+      <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" type="text/css" href="styles.css">
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+
+<body>
+
+<div class="wrapper">
+  
+    <div id="header">
+      <h1>Welcome to the</h1>
+      <h1>World's Greatest Chat App</h1>
+    </div>
+
+  <div id="nameinput">
+    <p>Your name:<input type = "text" id = "namebox"></p>
+  </div>
+
+  <div id="chatbox">
+    <ul>
+    </ul>
+  </div>
+
+  <div id="messageinput">
+    <p>Your message:</p><input type = "text" id = "input"><br>
+  </div>
+
+  <button type = "button" id = "button">Send message</button>
+
+
+  <script src = "client.js"></script>
+</div>
+</body>
+</html>
+
+  </xmp>
+</div>
+<!--   end HTML code -->
+
+  <h3>CSS Code</h3>
+
+<!-- Begin Css Code -->
+  <div class="html">
+  <xmp>
+.wrapper {
+  font-family: 'Roboto', sans-serif;
+  max-width: 48em;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 24px;
+  padding-left: 24px;
+}
+
+#header{
+  margin-top: 20px;
+}
+
+#header h1{
+  margin: 0;
+}
+
+#namebox{
+  margin-left: 20px;
+}
+
+#chatbox{
+  width: 500px;
+  height: 400px;
+  background-color: lightgrey;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+#messageinput p{
+  display: inline-block;
+  margin-right: 20px;
+}
+
+
+#input{
+  width: 300px;
+}
+
+ul{
+  list-style-type: none;
+}
+button {
+  font-size: 1em;
+  margin-top: 30px;
+  width: 200px;
+  height: 50px;
+  background-color: #0da1d8;
+  border: none;
+  color: #ffffff;
+}
+  </xmp>
+  </div>
+<!--   End CSS code --> 
+
+  <h3>Styling Overview</h3>
+
+  <p>It is important to keep the IDs that we assigned
+    and used in the javascript files, or your server and
+    client code will break.</p>
+
+  <p>In the html file we changed the position of some of
+    the elements and added a link to a google font style.
+    We also added a header id to the top header so we could
+    position it as a unit.</p>
+
+  <p>In the CSS file we added some styling to different sections
+    as you normally would with css. The most noteable features
+    are the background color or the <i>#chatbox</i> section and 
+    setting its width and height to a fixed size, so the box doesn't
+    change size as li elements are added during a chat.</p>
+
+  <p>Also, we set <i>ul</i> elements in the css to <i>list-style-type: none;</i>
+    so bullet points do not appear on the page. during typing.</p>
+
+  <p>Other than that, you can style this page as you normally would any other
+    html file. Enjoy!</p>
+
+</body>
+</html>

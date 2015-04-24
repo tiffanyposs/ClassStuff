@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title></title>
+    <script src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
+  </head>
+  <body>
+    <script type = "text/template" id = "PizzaRecipe">
+      <h1>Hello, Im a <%= food.type %></h1>
+      <h3>I require the following things:</h3>
+      <ul>
+        <% food.ingredients.forEach(function(ingredient) { %>
+          <li><%= ingredient %></li>
+          <% }); %>
+      </ul>
+    </script>
+
+
+    <script>
+      var template = _.template(document.getElementById("PizzaRecipe").innerHTML);
+      document.write(template({food: {type: "Pizza", ingredients: ["Dough", "Tomato Sauce", "Cheese", "Toppings"]}}));
+      </script>
+  </body>
+</html>
+
+

@@ -1,0 +1,63 @@
+<html>
+<body>
+  <canvas id="the_canvas" width="700" height="600"></canvas>
+
+  <script>
+  var canvas = document.getElementById('the_canvas')
+  var ctx = canvas.getContext('2d')
+  var x = 0
+  var y = 0
+
+
+  var draw = function(){
+
+
+    ctx.fillStyle = "gray";
+    ctx.fillRect(0,0, canvas.width, canvas.height);
+
+    x+=1;
+    if(x>canvas.width){
+      x=0;
+    }
+
+    ctx.beginPath();
+    ctx.arc(x+70, 67, 50, 0, 2*Math.PI);
+    ctx.fillStyle = "red";
+    ctx.fill();
+    //
+    ctx.beginPath();
+    ctx.arc(x+115, 80, 50, 0, 2*Math.PI);
+    ctx.fillStyle = "red";
+    ctx.fill();
+    //
+    ctx.beginPath();
+    ctx.arc(x+165, 50, 50, 0, 2*Math.PI);
+    ctx.fillStyle = "red";
+    ctx.fill();
+
+
+      ctx.beginPath();
+      ctx.arc(235+x, 210, 50, 0, 2*Math.PI);
+      ctx.fillStyle = "blue";
+      ctx.fill();
+      //
+      ctx.beginPath();
+      ctx.arc(175+x, 190, 50, 0, 2*Math.PI);
+      ctx.fillStyle = "blue";
+      ctx.fill();
+      //
+      ctx.beginPath();
+      ctx.arc(210+x, 260, 50, 0, 2*Math.PI);
+      ctx.fillStyle = "blue";
+      ctx.fill();
+
+
+
+  }
+
+
+  setInterval(draw, 20);
+  setInterval(draw_2, 2);
+  </script>
+</body>
+</html

@@ -1,0 +1,25 @@
+<html>
+	<body>
+		<header>
+			<h1>Dwarfs</h1>
+            <a href="/dwarfs">Go Home</a>
+		</header>
+
+        <p><%= thisdwarf[:name] %> is <%= thisdwarf[:age] %> years old.</p>
+
+        <h3>Update <%= thisdwarf[:name] %>'s name here:</h3>
+        <form action="/dwarf/<%= thisdwarf[:id]%>" method = 'post'>
+            <input type="hidden" name = "_method"  value = 'put'>
+            <input type="text" name = "newname" placeholder="what's their new name?" required>
+            <button>UPDATE IT!!!1!</button>
+        </form>
+
+        <p><%= thisdwarf[:name] %> can be removed here: </p>
+        <form action= '/dwarf/<%= thisdwarf[:id]%>' method= 'post'>
+            <input type="hidden" name="_method" value="delete">
+            <button>DELETE IT!!!!</button>
+        </form>
+
+
+	</body>
+</html>
